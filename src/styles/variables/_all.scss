@@ -1,0 +1,7 @@
+@import 'layout';
+@import 'colors';
+
+:root {
+  @include layout-variables;
+  @include color-variables;
+}

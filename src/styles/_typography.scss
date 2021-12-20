@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Ubuntu:wght@700&display=swap');
+
+@mixin font-heading {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+@mixin font-body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+* {
+  @include font-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include font-heading;
+}

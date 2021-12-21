@@ -1,5 +1,6 @@
-import adapter from '@sveltejs/adapter-auto'
+import adapter from '@sveltejs/adapter-static'
 import preprocess from 'svelte-preprocess'
+import path from 'path'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,12 +12,21 @@ const config = {
       prependData: "@import 'src/styles/style.scss';",
     },
   }),
-
   kit: {
-    adapter: adapter(),
-
+    adapter: adapter({
+      pages: 'public',
+      assets: 'public',
+      fallback: null,
+    }),
     // hydrate the <div id="svelte"> element in src/app.html
     target: '#svelte',
+    vite: {
+      resolve: {
+        alias: {
+          $state: path.resolve('./src/state'),
+        },
+      },
+    },
   },
 }
 

@@ -1,6 +1,11 @@
 <script lang="ts">
+import { getContext, setContext } from "svelte";
+
   import ToolbarGroup from "./ToolbarGroup.svelte";
   import ToolbarItem from "./ToolbarItem.svelte";
+
+  setContext('nav', { slug: '' })
+
 </script>
 
 <div class="toolbar">
@@ -11,7 +16,7 @@
     <ToolbarItem name="Analytics" />
     <ToolbarItem name="Content Type Builder" />
     <ToolbarItem name="Files Upload" />
-    <ToolbarItem name="Roles & Permissions" />
+    <ToolbarItem name="Roles And Permissions" />
     <ToolbarItem name="Settings Manager" />
   </ToolbarGroup>
   <ToolbarGroup name="General">

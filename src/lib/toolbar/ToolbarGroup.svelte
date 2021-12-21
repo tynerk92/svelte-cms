@@ -1,5 +1,11 @@
 <script lang="ts">
-  export let name;
+  import { setContext } from 'svelte';
+
+  export let name: string;
+
+  const baseUrl: string = name.toLowerCase().split(' ').join('-');
+
+  setContext(name.toLowerCase().split(' ').join('-'), { baseUrl })
 </script>
 
 <h4>{name}</h4>

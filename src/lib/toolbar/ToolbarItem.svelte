@@ -1,11 +1,16 @@
 <script lang="ts">
-  import { nav } from '../../state/nav.store'
-  export let name;
+  import { getContext, setContext } from "svelte";
+  import { nav } from '$state/nav.store'
+
+  export let name: string;
+
+  const slug: string = name.toLowerCase().split(' ').join('-')
 </script>
 
 <a 
   class="toolbar-item"
-  href="#"
+  href="/page/{slug}"
+  class:active="{$nav.currentRoute === slug}"
 >
   <span class="icon">
     <i class="fas fa-angle-right"></i>
